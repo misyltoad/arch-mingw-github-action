@@ -1,0 +1,18 @@
+name: Arch Linux MinGW Builder
+description: Build setup for MinGW-based projects on Arch Linux
+
+branding:
+  icon: moon
+  color: purple
+
+inputs:
+  command:
+    description: >-
+      Command to run in the container.
+    required: true
+
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.command }}
