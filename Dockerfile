@@ -1,5 +1,4 @@
-# Need to use an older version of Arch because of Pacman breakage...
-FROM archlinux:base-devel-20210124.0.14185
+FROM archlinux:base-devel
 
 LABEL maintainer="joshua@froggi.es"
 
