@@ -16,7 +16,7 @@ RUN passwd -d builduser
 RUN printf 'builduser ALL=(ALL) ALL\n' | tee -a /etc/sudoers 
 
 # clone, build, then install the lib32-glfw-x11 AUR package (there is no lib32 glfw in the standard Arch repositories)
-RUN sudo -u builduser bash -c 'export OLD_PWD=$PWD && cd ~ && git clone https://aur.archlinux.org/lib32-glfw.git lib32-glfw-x11 && cd lib32-glfw-x11 && makepkg -s --noconfirm && sudo pacman --noconfirm -U lib32-glfw-x11* && cd $OLD_PWD'
+RUN sudo -u builduser bash -c 'export OLD_PWD=$PWD && cd ~ && git clone https://aur.archlinux.org/lib32-glfw.git lib32-glfw && cd lib32-glfw && makepkg -s --noconfirm && sudo pacman --noconfirm -U lib32-glfw* && cd $OLD_PWD'
 
 COPY entrypoint.sh /entrypoint.sh
 
